@@ -100,3 +100,27 @@ body {
     width: 100%;
     height: auto;
 }
+
+.about-content{
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-content:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.6s ease-out,
+                box-shadow 0.6s ease-out;
+}
+
+.about-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
