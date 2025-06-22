@@ -27,6 +27,19 @@
                     <img src="./static/img/logo.svg" />
                 </div>
             </a>
+            <section class="nav-links">
+                {% if routes %}
+                    <ul class="nav-list">
+                        {% for route in routes %}
+                        <li>
+                            <a href="{{ route.url }}" style="color:white">{{ route.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p> No Nav links</p>
+                {% endif %}
+            </section>
         </div>
     </header>
 
