@@ -20,31 +20,53 @@ def more():
             "description": "Leading external relations efforts for SFU Surge, focusing on partnerships and community engagement."
         },
         {
-            "position": "PlaceHolder1",
-            "organization": "PlaceHolder1",
-            "duration": "PlaceHolder1",
-            "description": "PlaceHolder1"
+            "position": "Production Engineer Fellow",
+            "organization": "Meta x MLH",
+            "duration": "June 2025 - Present",
+            "description": "Participating in a fellowship program with Meta and Major League Hacking, focusing on production engineering and software development."
+        },
+        {
+            "position": "Associate Vice President Equity and Sustainability",
+            "organization": "Simon Fraser Student Society",
+            "duration": "June 2024 - May 2025",
+            "description": "Overseeing equity and sustainability initiatives within the Simon Fraser Student Society."
+        },
+        {
+            "position": "Vice President of Finance",
+            "organization": "Society of Arts and Social Sciences",
+            "duration": "October 2024 - April 2025",
+            "description": "Managing financial operations and budgeting for the Society of Arts and Social Sciences."
         }
     ]
 
     education = [
         {
-            "degree": "placeholder2",
-            "institution": "placeholder2",
-            "year": "placeholder2",
+            "degree": "Bachelors of Applied Science in Computing Science",
+            "institution": "Simon Fraser University",
+            "year": "2027",
         },
+        {
+            "degree": "Associates of Arts in Arts and Social Sciences",
+            "institution": "Coquitlam College",
+            "year": "2023",
+        }
     ]
 
     hobbies=[
         {
             "hobby": "Video Games",
             "description": "Enjoy playing a variety of video games specifically League and TFT.",
-            "image": "static/images/logo.jpg"
+            "image": "./static/img/T1Art.jpeg"
         },
         {
-            "hobby": "placeholder3",
-            "description": "placeholder3",
-            "image": "static/images/logo.jpg"
+            "hobby": "Organzing Hackathons",
+            "description": "Passionate about organizing hackathons and tech events to foster innovation and collaboration.",
+            "image": "./static/img/StormHacks.jpg"
+        },
+        {
+            "hobby": "Watching Esports",
+            "description": "Avid fan of esports, particularly League of Legends (Huge fan of T1 and Faker).",
+            "image": "./static/img/EsportsWatching.PNG"
         }
     ]
 
