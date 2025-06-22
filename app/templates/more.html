@@ -71,22 +71,5 @@
         <p>No Education listed.</p>
         {% endif %}
     </section>
-
-    <section>
-        <h2 style="text-align: center;">Hobbies</h2>
-        {% if hobbies %}
-        <ul class="listBlock">
-            {% for hobby in hobbies %}
-            <li>
-                <h3>{{ hobby.hobby }}</h3>
-                <p>{{ hobby.description }}</p>
-                <img src="{{ hobby.image }}" alt="{{ hobby.name }} image" class="hobby-image">
-            </li>
-            {% endfor %}
-        </ul>
-        {% else %}
-        <p>No hobbies listed.</p>
-        {% endif %}
-    </section>
 </body>
 </html>

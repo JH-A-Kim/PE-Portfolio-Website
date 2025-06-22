@@ -56,17 +56,17 @@ def more():
         {
             "hobby": "Video Games",
             "description": "Enjoy playing a variety of video games specifically League and TFT.",
-            "image": "./static/img/T1Art.jpeg"
+            "image": "./static/images/T1Art.jpeg"
         },
         {
             "hobby": "Organzing Hackathons",
             "description": "Passionate about organizing hackathons and tech events to foster innovation and collaboration.",
-            "image": "./static/img/StormHacks.jpg"
+            "image": "./static/images/StormHacks.jpg"
         },
         {
             "hobby": "Watching Esports",
             "description": "Avid fan of esports, particularly League of Legends (Huge fan of T1 and Faker).",
-            "image": "./static/img/EsportsWatching.PNG"
+            "image": "./static/images/EsportsWatching.PNG"
         }
     ]
 
