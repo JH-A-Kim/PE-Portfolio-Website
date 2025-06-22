@@ -173,3 +173,7 @@ body {
     gap: 1rem;
     justify-content: center;
 }
+
+footer {
+    text-align: center;
+}
