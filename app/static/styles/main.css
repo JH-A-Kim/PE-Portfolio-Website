@@ -150,3 +150,26 @@ body {
     border-radius: 6px, 6px, 0, 0;
 }
   .listBlock { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: center; }
+
+.nav-links {
+    display: block;
+    background-color: #1C539F;
+    border: 1px solid #1C539F;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 2rem auto;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: center;
+}
