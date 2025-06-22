@@ -10,19 +10,19 @@ experience = [
             "position": "Director of External Relations",
             "organization": "SFU Surge",
             "duration": "September 2024 - Present",
-            "description": "Leading external relations efforts for SFU Surge, focusing on partnerships and community engagement."
+            "description": "Leading external relations efforts for SFU Surge, focusing on partnerships and community engagement. Acquiring sponsorships with AMD, Scalar, Vercel, Defang and more."
         },
         {
             "position": "Production Engineer Fellow",
             "organization": "Meta x MLH",
             "duration": "June 2025 - Present",
-            "description": "Participating in a fellowship program with Meta and Major League Hacking, focusing on production engineering and software development."
+            "description": "Participating in a fellowship program with Meta and Major League Hacking, focusing on production engineering and software development. Stay tuned for what I do!"
         },
         {
             "position": "Associate Vice President Equity and Sustainability",
             "organization": "Simon Fraser Student Society",
             "duration": "June 2024 - May 2025",
-            "description": "Overseeing equity and sustainability initiatives within the Simon Fraser Student Society."
+            "description": "Overseeing equity and sustainability initiatives within the Simon Fraser Student Society. Bringing new scholarship opportunities for students with accessibility needs."
         },
         {
             "position": "Vice President of Finance",
@@ -48,17 +48,17 @@ education = [
 hobbies=[
         {
             "name": "Video Games",
-            "description": "Enjoy playing a variety of video games specifically League and TFT.",
+            "description": "I really enjoy playing a variety of video games specifically League and TFT. (It has consumed my life :D)",
             "image": "./static/img/T1Art.jpeg"
         },
         {
             "name": "Organzing Hackathons",
-            "description": "Passionate about organizing hackathons and tech events to foster innovation and collaboration.",
+            "description": "I am passionate about organizing hackathons and tech events to foster innovation and collaboration. StormHacks is an MLH partner and everyone should apply for it!",
             "image": "./static/img/StormHacks.jpg"
         },
         {
             "name": "Watching Esports",
-            "description": "Avid fan of esports, particularly League of Legends (Huge fan of T1 and Faker).",
+            "description": "I am a avid fan of esports, particularly League of Legends (Huge fan of T1 and Faker). Although my sleep schedule is ruined by watching the LCK at 3 am every night.",
             "image": "./static/img/EsportsWatching.PNG"
         }
     ]
