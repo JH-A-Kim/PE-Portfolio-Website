@@ -5,14 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
-
-@app.route('/')
-def index():
-    return render_template('index.html', title="Jung-Hyun Andrew Kim", url=os.getenv("URL"))
-
-@app.route('/more')
-def more():
-    experience = [
+experience = [
         {
             "position": "Director of External Relations",
             "organization": "SFU Surge",
@@ -39,7 +32,7 @@ def more():
         }
     ]
 
-    education = [
+education = [
         {
             "degree": "Bachelors of Applied Science in Computing Science",
             "institution": "Simon Fraser University",
@@ -52,28 +45,36 @@ def more():
         }
     ]
 
-    hobbies=[
+hobbies=[
         {
-            "hobby": "Video Games",
+            "name": "Video Games",
             "description": "Enjoy playing a variety of video games specifically League and TFT.",
             "image": "./static/img/T1Art.jpeg"
         },
         {
-            "hobby": "Organzing Hackathons",
+            "name": "Organzing Hackathons",
             "description": "Passionate about organizing hackathons and tech events to foster innovation and collaboration.",
             "image": "./static/img/StormHacks.jpg"
         },
         {
-            "hobby": "Watching Esports",
+            "name": "Watching Esports",
             "description": "Avid fan of esports, particularly League of Legends (Huge fan of T1 and Faker).",
             "image": "./static/img/EsportsWatching.PNG"
         }
     ]
 
-    return render_template('more.html',
-                            title="More about Jung-Hyun Andrew Kim",
+@app.route('/')
+def index():
+    return render_template('index.html',
+                            title="Jung-Hyun Andrew Kim", 
                             experience=experience,
                             education=education,
+                            url=os.getenv("URL"))
+
+@app.route('/hobbies')
+def hobbiesPage():
+    return render_template('hobbies.html',
+                            title="Jung-Hyun Andrew Kim",
                             hobbies=hobbies,
                             url=os.getenv("URL")
                             )
