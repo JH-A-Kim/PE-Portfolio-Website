@@ -38,19 +38,37 @@
     </div>
 
     <section>
-        <h2>Work Experience</h2>
-        {% if experience %}
-        <ul>
-            {% for job in experience %}
+        <h2 style="text-align: center;">Work Experience</h2>
+        <div>
+            {% if experience %}
+            <ul class="listBlock">
+                {% for job in experience %}
+                <li>
+                    <h3>{{ job.position }} at {{ job.organization }}</h3>
+                    <p>{{ job.description }}</p>
+                    <p><strong>Duration:</strong> {{ job.duration }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No work experience listed.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center;">Education</h2>
+        {% if education %}
+        <ul class="listBlock">
+            {% for school in education %}
             <li>
-                <h3>{{ job.position }} at {{ job.organization }}</h3>
-                <p>{{ job.description }}</p>
-                <p><strong>Duration:</strong> {{ job.duration }}</p>
+                <h3>{{ school.degree }} at {{ school.institution }}</h3>
+                <p><strong>Graduation Year:</strong> {{ school.year }}</p>
             </li>
             {% endfor %}
         </ul>
         {% else %}
-        <p>No work experience listed.</p>
+        <p>No Education listed.</p>
         {% endif %}
     </section>
 </body>
