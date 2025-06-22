@@ -63,12 +63,24 @@ hobbies=[
         }
     ]
 
+routes = [
+    {
+        "name": "Home",
+        "url": "/",
+    },
+    {
+        "name": "Hobbies",
+        "url": "/hobbies",
+    }
+]
+
 @app.route('/')
 def index():
     return render_template('index.html',
                             title="Jung-Hyun Andrew Kim", 
                             experience=experience,
                             education=education,
+                            routes=routes,
                             url=os.getenv("URL"))
 
 @app.route('/hobbies')
@@ -76,5 +88,6 @@ def hobbiesPage():
     return render_template('hobbies.html',
                             title="Jung-Hyun Andrew Kim",
                             hobbies=hobbies,
+                            routes=routes,
                             url=os.getenv("URL")
                             )
