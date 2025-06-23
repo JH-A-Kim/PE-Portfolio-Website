@@ -1,93 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:title" content="Personal Portfolio">
-    <meta property="og:description" content="My Personal Portfolio">
-    <meta property="og:url" content="{{ url }}">
+{% block content %}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+<section id="about" class="about">
+    <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+            Hi there! I'm Andrew, a passionate developer and hackathon organizer who loves simplicity, clean code, and building meaningful experiences.
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
-    <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-    <title>{{ title }}</title>
-</head>
+I thrive on bringing the developer community together through events like StormHacks, which hosts over 1,000 participants, along with other initiatives that foster creativity and collaboration.
 
-<body>
-    <header class="nav-bar">
-        <div class="nav-content">
-            <a href="/">
-                <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
-                </div>
-            </a>
-        </div>
-    </header>
-
-    <div class="profile">
-        <div id="profile-picture" class="profile-picture">
-            <img src="./static/img/profilePhoto.png">
-        </div>
-        <h1>{{ title }}</h1>
+In my (rare) free time, I enjoy cheering on my favorite League of Legends team, T1, (as shown below) and hanging out with friends — though let’s be honest, it usually turns into more work (the fun kind! XD).
+        </p>
+        <img src="./static/img/T1.jpeg" alt="T1 Photo" class="about-photo">
     </div>
+</section>
 
-    <section class="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-                Hi there! I'm Andrew a passionate developer and hackathon organizer with a love for simplicity and clean code!
-                I thrive on creating incredible experiences for my fellow developers through hackathons like StormHacks hosting 1000+ people
-                and other various events that bring the developer community together. In my free time (What is free time XD) I love 
-                watching my favourtite LOL team, T1 win it all and hanging out with friends. (Which mostly ends up being work). 
-            </p>
-            <img src="./static/img/T1.jpeg" alt="T1 Photo" class="about-photo">
-        </div>
-    </section>
-
-    <section>
-        <h2 style="text-align: center;">Work Experience</h2>
-        <div>
-            {% if experience %}
-            <ul class="listBlock">
-                {% for job in experience %}
-                <li>
-                    <h3>{{ job.position }} at {{ job.organization }}</h3>
-                    <p>{{ job.description }}</p>
-                    <p><strong>Duration:</strong> {{ job.duration }}</p>
-                </li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>No work experience listed.</p>
-            {% endif %}
-        </div>
-    </section>
-
-    <section>
-        <h2 style="text-align: center;">Education</h2>
-        {% if education %}
+<section>
+    <h2 id="experience" style="text-align: center;">Work Experience</h2>
+    <div>
+        {% if experience %}
         <ul class="listBlock">
-            {% for school in education %}
+            {% for job in experience %}
             <li>
-                <h3>{{ school.degree }} at {{ school.institution }}</h3>
-                <p><strong>Graduation Year:</strong> {{ school.year }}</p>
+                <h3>{{ job.position }} at {{ job.organization }}</h3>
+                <p>{{ job.description }}</p>
+                <p><strong>Duration:</strong> {{ job.duration }}</p>
             </li>
             {% endfor %}
         </ul>
         {% else %}
-        <p>No Education listed.</p>
+        <p>No work experience listed.</p>
         {% endif %}
-    </section>
-    <div class="map" style="text-align: center;">
-        <div id="map-picture" class="map-picture">
-            <img src="./static/img/map.png">
-        </div>
-    </div>  
-</body>
-</html>
+    </div>
+</section>
+
+<section>
+    <h2 id="education" style="text-align: center;">Education</h2>
+    {% if education %}
+    <ul class="listBlock">
+        {% for school in education %}
+        <li>
+            <h3>{{ school.degree }} at {{ school.institution }}</h3>
+            <p><strong>Graduation Year:</strong> {{ school.year }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No Education listed.</p>
+    {% endif %}
+</section>
+<div class="map" style="text-align: center;">
+    <div id="map-picture" class="map-picture">
+        <img src="./static/img/map.png">
+    </div>
+</div>  
+
+{% endblock %}
