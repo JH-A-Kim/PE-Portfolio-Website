@@ -34,6 +34,10 @@ if [ -z "$result" ]; then
   printf 'Test failed: Matching Post Not Found.' >&2
   exit 1
 else
-  printf 'Test passed: Matching Post Found.'
+  printf 'Test passed: Matching Post Found.\n'
+  id=$(echo "$result" | jq '.id')
+  printf 'Post ID: %s\n' "$id"
+
+  curl -X DELETE http://127.0.0.1:5000/api/timeline_post/$id 
 fi
 
