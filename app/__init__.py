@@ -96,6 +96,10 @@ routes = [
     {
         "name": "Hobbies",
         "url": "/hobbies",
+    },
+    {
+        "name": "Timeline",
+        "url": "/timeline",
     }
 ]
 
@@ -116,6 +120,10 @@ def hobbiesPage():
                             routes=routes,
                             url=os.getenv("URL")
                             )
+@app.route('/timeline')
+def timeline():
+    timeline_posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    return render_template('timeline.html', title="Timeline", timeline_posts=timeline_posts, routes=routes, url=os.getenv("URL"))
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
