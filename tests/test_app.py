@@ -43,6 +43,12 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
         assert "John Doe" in html
 
+        # tests relating to timeline page
+        response = self.client.get("/timeline")
+        assert response.status_code == 200
+        html = response.get_data(as_text=True)
+        assert "<title>Timeline</title>" in html
+
     def test_malformed_timeline_post(self):
         # POST request missing name
         response = self.client.post(
