@@ -2,14 +2,9 @@
 
 cd PE-Portfolio-Website
 
-git fetch
+git fetch && git reset origin/main --hard 
 
-git reset origin/main --hard
+docker compose -f docker-compose.prod.yml down
 
-source python3-virtualenv/bin/activate
+docker compose -f docker-compose.prod.yml up -d --build
 
-pip install -r requirements.txt
-
-systemctl daemon-reload
-
-systemctl restart myportfolio
