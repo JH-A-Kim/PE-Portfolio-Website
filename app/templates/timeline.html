@@ -74,6 +74,7 @@ form.addEventListener('submit', async function(e) {
 
         if (res.status === 503) {
             const msg = await res.text();
+            banner.style.display = 'block';
             return showToast(msg)
         }
         if(!res.ok) {
@@ -87,15 +88,15 @@ form.addEventListener('submit', async function(e) {
 
         const data = await res.json();
         console.log(data);
-    }
-    catch (error) {
-        console.error('Error:', error);
-        showToast(`Unexpected error occurred: ${err.message}`);
-    }
-    finally {
+
         banner.style.display = 'block';
         showToast('Post submitted successfully!');
     }
+    catch (error) {
+        console.error('Error:', error);
+        banner.style.display = 'block';
+        showToast(`Unexpected error occurred: ${err.message}`);
+    } 
 })
 </script>
 {% endblock %}
