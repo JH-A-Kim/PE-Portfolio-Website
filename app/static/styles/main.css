@@ -229,3 +229,23 @@ body {
 footer {
     text-align: center;
 }
+.toast {
+position: fixed;
+top: 20px;
+right: 20px;
+max-width: 300px;
+padding: 1em;
+background: white;
+color: #1d539f;
+border: 1px solid #1d539f;
+border-radius: 4px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+opacity: 0;
+pointer-events: none;
+transition: opacity 1s ease-in-out;
+z-index: 1000;
+}
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
+}
