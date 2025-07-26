@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <section id="form-submit" class="form-submit">
     <div class="form-content">
         <h2>Submit Your Timeline</h2>
@@ -25,7 +24,6 @@
 </section>
 
 <section id="timeline-display">
-
     <div>
         {% if timeline_posts %}
         <ul class="listBlock" id="post-list">
@@ -45,26 +43,60 @@
 
 </section>
 
+<div id="toast" class="toast"></div>
+
 <script>
     const form = document.getElementById('form');
     const postList = document.getElementById('post-list');
-form.addEventListener('submit', function(e) {
+    const banner = document.getElementById('toast');
+
+    function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 5000);
+    }
+form.addEventListener('submit', async function(e) {
     // Prevent default behavior:
     e.preventDefault();
+
+    toast.classList.remove('show');
+    banner.style.display = 'none';
+
     // Create payload as new FormData object:
     const payload = new FormData(form);
     // Post the payload using Fetch:
-    fetch('/api/timeline_post', {
-    method: 'POST',
-    body: payload,
-    }).then(post => {
-        const li=document.createElement('li');
+    try {
+        const res = await fetch('/api/timeline_post', {
+            method: 'POST',
+            body: payload,
+        });
+
+        if (res.status === 503) {
+            const msg = await res.text();
+            return showToast(msg)
+        }
+        if(!res.ok) {
+            throw new Error(`Server error: ${res.status}`);
+        }
+
+        const li = document.createElement('li');
         li.innerHTML = `<h3>${payload.get("name")}</h3> <h4>${payload.get("email")}</h4><p>${payload.get("content")}</p> <p><strong>Date:</strong> Just now</p>`;
         postList.prepend(li);
         form.reset();
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
+
+        const data = await res.json();
+        console.log(data);
+    }
+    catch (error) {
+        console.error('Error:', error);
+        showToast(`Unexpected error occurred: ${err.message}`);
+    }
+    finally {
+        banner.style.display = 'block';
+        showToast('Post submitted successfully!');
+    }
 })
 </script>
 {% endblock %}
