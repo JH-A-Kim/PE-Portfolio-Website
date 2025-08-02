@@ -185,7 +185,7 @@ def delete_time_line_post(id):
     except TimelinePost.DoesNotExist:
         return {"status": "error", "message": "Post not found"}, 404
 
-@app.route("/api/timeline_post/", methods=["DELETE"])
+@app.route("/api/timeline_post/all", methods=["DELETE"])
 def delete_all_time_line_posts():
     TimelinePost.delete().execute()
     return {"status": "success", "message": "All posts deleted successfully"}
