@@ -187,5 +187,8 @@ def delete_time_line_post(id):
 
 @app.route("/api/timeline_post/all", methods=["DELETE"])
 def delete_all_time_line_posts():
-    TimelinePost.delete().execute()
-    return {"status": "success", "message": "All posts deleted successfully"}
+    try:
+        TimelinePost.delete().execute()
+        return {"status": "success", "message": "All posts deleted successfully"}
+    except Exception as e:
+        return {"status": "error", "message": f"Failed to delete posts: {str(e)}"}, 500
